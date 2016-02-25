@@ -17,13 +17,21 @@ import javax.inject.Named;
  * @author Prueba
  */
 @ManagedBean
-@Named(value = "empControlador")
+@Named(value = "empControl")
 @SessionScoped 
 public class EmpleadoControlador {
 
     int startId;
+
+    public DataModel getEmpNombre() {
+        return empNombre;
+    }
+
+    public void setEmpNombre(DataModel empNombre) {
+        this.empNombre = empNombre;
+    }
     int endId;
-    DataModel EmpNombre;
+    DataModel empNombre;
     EmpHelper helper;
 //    private int recordCount = 1000;
 //    private int pageSize = 10;
@@ -58,13 +66,13 @@ public class EmpleadoControlador {
 
 
     public DataModel getEmpleado() {
-        if (EmpNombre == null) {
-            EmpNombre = new ListDataModel(helper.getEmpleado());
+        if (empNombre == null) {
+            empNombre = new ListDataModel(helper.getEmpleado());
         }
-        return EmpNombre;
+        return empNombre;
     }
 
     void recreateModel() {
-        EmpNombre = null;
+        empNombre = null;
     }
 }
