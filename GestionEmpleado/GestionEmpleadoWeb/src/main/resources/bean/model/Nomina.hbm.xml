@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25-feb-2016 11:50:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bean.model.Nomina" table="nomina" catalog="empresa" optimistic-lock="version">
+        <id name="codNomina" type="java.lang.Integer">
+            <column name="codNomina" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categoriaprofesional" class="bean.model.Categoriaprofesional" fetch="select">
+            <column name="nomCategoriaP" not-null="true" />
+        </many-to-one>
+        <many-to-one name="empleado" class="bean.model.Empleado" fetch="select">
+            <column name="nomEmpleado" not-null="true" />
+        </many-to-one>
+        <property name="nomFecha" type="date">
+            <column name="nomFecha" length="10" not-null="true" />
+        </property>
+        <property name="nomSalario" type="double">
+            <column name="nomSalario" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
