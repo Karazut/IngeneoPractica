@@ -1,5 +1,5 @@
-package bean.model;
-// Generated 25-feb-2016 13:23:15 by Hibernate Tools 4.3.1
+package Modelo;
+// Generated 25-feb-2016 13:46:04 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,7 +14,7 @@ public class Departamento  implements java.io.Serializable {
      private Integer codDepartamento;
      private Empleado empleado;
      private String dptoNombre;
-     private Set<Empleado> empleados = new HashSet<Empleado>(0);
+     private Set empleados = new HashSet(0);
 
     public Departamento() {
     }
@@ -24,7 +24,7 @@ public class Departamento  implements java.io.Serializable {
         this.empleado = empleado;
         this.dptoNombre = dptoNombre;
     }
-    public Departamento(Empleado empleado, String dptoNombre, Set<Empleado> empleados) {
+    public Departamento(Empleado empleado, String dptoNombre, Set empleados) {
        this.empleado = empleado;
        this.dptoNombre = dptoNombre;
        this.empleados = empleados;
@@ -51,11 +51,11 @@ public class Departamento  implements java.io.Serializable {
     public void setDptoNombre(String dptoNombre) {
         this.dptoNombre = dptoNombre;
     }
-    public Set<Empleado> getEmpleados() {
+    public Set getEmpleados() {
         return this.empleados;
     }
     
-    public void setEmpleados(Set<Empleado> empleados) {
+    public void setEmpleados(Set empleados) {
         this.empleados = empleados;
     }
 

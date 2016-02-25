@@ -1,5 +1,5 @@
-package bean.model;
-// Generated 25-feb-2016 13:23:15 by Hibernate Tools 4.3.1
+package Modelo;
+// Generated 25-feb-2016 13:46:04 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -15,7 +15,7 @@ public class Contrato  implements java.io.Serializable {
      private Integer codContrato;
      private Date contFechaInicio;
      private Date contFechaFin;
-     private Set<Categoriaprofesional> categoriaprofesionals = new HashSet<Categoriaprofesional>(0);
+     private Set categoriaprofesionals = new HashSet(0);
 
     public Contrato() {
     }
@@ -24,7 +24,7 @@ public class Contrato  implements java.io.Serializable {
     public Contrato(Date contFechaInicio) {
         this.contFechaInicio = contFechaInicio;
     }
-    public Contrato(Date contFechaInicio, Date contFechaFin, Set<Categoriaprofesional> categoriaprofesionals) {
+    public Contrato(Date contFechaInicio, Date contFechaFin, Set categoriaprofesionals) {
        this.contFechaInicio = contFechaInicio;
        this.contFechaFin = contFechaFin;
        this.categoriaprofesionals = categoriaprofesionals;
@@ -51,11 +51,11 @@ public class Contrato  implements java.io.Serializable {
     public void setContFechaFin(Date contFechaFin) {
         this.contFechaFin = contFechaFin;
     }
-    public Set<Categoriaprofesional> getCategoriaprofesionals() {
+    public Set getCategoriaprofesionals() {
         return this.categoriaprofesionals;
     }
     
-    public void setCategoriaprofesionals(Set<Categoriaprofesional> categoriaprofesionals) {
+    public void setCategoriaprofesionals(Set categoriaprofesionals) {
         this.categoriaprofesionals = categoriaprofesionals;
     }
 

@@ -1,5 +1,5 @@
-package bean.model;
-// Generated 25-feb-2016 13:23:15 by Hibernate Tools 4.3.1
+package Modelo;
+// Generated 25-feb-2016 13:46:04 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -19,9 +19,9 @@ public class Empleado  implements java.io.Serializable {
      private String empCedula;
      private String empDireccion;
      private String empTelefono;
-     private Set<Departamento> departamentos = new HashSet<Departamento>(0);
-     private Set<Empleado> empleados = new HashSet<Empleado>(0);
-     private Set<Nomina> nominas = new HashSet<Nomina>(0);
+     private Set departamentos = new HashSet(0);
+     private Set empleados = new HashSet(0);
+     private Set nominas = new HashSet(0);
 
     public Empleado() {
     }
@@ -33,7 +33,7 @@ public class Empleado  implements java.io.Serializable {
         this.empCedula = empCedula;
         this.empDireccion = empDireccion;
     }
-    public Empleado(Departamento departamento, Empleado empleado, String empNombre, String empApellido, String empCedula, String empDireccion, String empTelefono, Set<Departamento> departamentos, Set<Empleado> empleados, Set<Nomina> nominas) {
+    public Empleado(Departamento departamento, Empleado empleado, String empNombre, String empApellido, String empCedula, String empDireccion, String empTelefono, Set departamentos, Set empleados, Set nominas) {
        this.departamento = departamento;
        this.empleado = empleado;
        this.empNombre = empNombre;
@@ -102,25 +102,25 @@ public class Empleado  implements java.io.Serializable {
     public void setEmpTelefono(String empTelefono) {
         this.empTelefono = empTelefono;
     }
-    public Set<Departamento> getDepartamentos() {
+    public Set getDepartamentos() {
         return this.departamentos;
     }
     
-    public void setDepartamentos(Set<Departamento> departamentos) {
+    public void setDepartamentos(Set departamentos) {
         this.departamentos = departamentos;
     }
-    public Set<Empleado> getEmpleados() {
+    public Set getEmpleados() {
         return this.empleados;
     }
     
-    public void setEmpleados(Set<Empleado> empleados) {
+    public void setEmpleados(Set empleados) {
         this.empleados = empleados;
     }
-    public Set<Nomina> getNominas() {
+    public Set getNominas() {
         return this.nominas;
     }
     
-    public void setNominas(Set<Nomina> nominas) {
+    public void setNominas(Set nominas) {
         this.nominas = nominas;
     }
 

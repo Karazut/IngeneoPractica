@@ -1,5 +1,5 @@
-package bean.model;
-// Generated 25-feb-2016 13:23:15 by Hibernate Tools 4.3.1
+package Modelo;
+// Generated 25-feb-2016 13:46:04 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,7 +14,7 @@ public class Categoriaprofesional  implements java.io.Serializable {
      private Integer codCategoriaP;
      private Contrato contrato;
      private String catNombre;
-     private Set<Nomina> nominas = new HashSet<Nomina>(0);
+     private Set nominas = new HashSet(0);
 
     public Categoriaprofesional() {
     }
@@ -24,7 +24,7 @@ public class Categoriaprofesional  implements java.io.Serializable {
         this.contrato = contrato;
         this.catNombre = catNombre;
     }
-    public Categoriaprofesional(Contrato contrato, String catNombre, Set<Nomina> nominas) {
+    public Categoriaprofesional(Contrato contrato, String catNombre, Set nominas) {
        this.contrato = contrato;
        this.catNombre = catNombre;
        this.nominas = nominas;
@@ -51,11 +51,11 @@ public class Categoriaprofesional  implements java.io.Serializable {
     public void setCatNombre(String catNombre) {
         this.catNombre = catNombre;
     }
-    public Set<Nomina> getNominas() {
+    public Set getNominas() {
         return this.nominas;
     }
     
-    public void setNominas(Set<Nomina> nominas) {
+    public void setNominas(Set nominas) {
         this.nominas = nominas;
     }
 
