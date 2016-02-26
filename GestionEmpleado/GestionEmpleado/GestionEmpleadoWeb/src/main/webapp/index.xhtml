@@ -11,7 +11,7 @@
     <h:body>
         <ui:composition template="./WEB-INF/plantilla/plantilla.xhtml">
             <ui:define name="section">
-                <h:form id="frmIngresarEmpleado">
+                <h:form id="frmListarEmpleado">
                     <p:growl id="mensajeGeneral" showDetail="true" />
                     <h1>Registrar Empleado</h1>
                     <hr/>
@@ -26,14 +26,11 @@
                                 <p:column headerText="Cédula">
                                     <h:outputText value="#{item.empCedula}"/>
                                 </p:column>
-                                <p:column headerText="Nombre" filterBy="empNombre">
+                                <p:column headerText="Nombre">
                                     <h:outputText value="#{item.empNombre}"/>
                                 </p:column>
                                 <p:column headerText="Apellido" filterBy="empApellido">
                                     <h:outputText value="#{item.empApellido}"/>
-                                </p:column>
-                                <p:column headerText="Telefono">
-                                    <h:outputText value="#{item.empTelefono}"/>
                                 </p:column>
                                 <p:column headerText="Direccion">
                                     <h:outputText value="#{item.empDireccion}"/>
@@ -42,8 +39,11 @@
                         </h:panelGroup>
                     </p:panelGrid>
                 </h:form>
+                
             </ui:define>
         </ui:composition>
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
     </h:body>
 </html>
 
