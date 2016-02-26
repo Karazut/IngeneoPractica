@@ -7,10 +7,10 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/empresa?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">12345</property>
-    <mapping resource="Modelo/Departamento.hbm.xml"/>
-    <mapping resource="Modelo/Empleado.hbm.xml"/>
-    <mapping resource="Modelo/Categoriaprofesional.hbm.xml"/>
-    <mapping resource="Modelo/Nomina.hbm.xml"/>
-    <mapping resource="Modelo/Contrato.hbm.xml"/>
+    <mapping resource="POJO/Departamento.hbm.xml"/>
+    <mapping resource="POJO/Contrato.hbm.xml"/>
+    <mapping resource="POJO/Empleado.hbm.xml"/>
+    <mapping resource="POJO/Nomina.hbm.xml"/>
+    <mapping resource="POJO/Categoriaprofesional.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

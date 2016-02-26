@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 25-feb-2016 13:46:05 by Hibernate Tools 4.3.1 -->
+<!-- Generated feb 25, 2016 7:23:25 p.m. by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Modelo.Empleado" table="empleado" catalog="empresa" optimistic-lock="version">
+    <class name="POJO.Empleado" table="empleado" catalog="empresa" optimistic-lock="version">
         <id name="codEmpleado" type="java.lang.Integer">
             <column name="codEmpleado" />
             <generator class="identity" />
         </id>
-        <many-to-one name="departamento" class="Modelo.Departamento" fetch="select">
+        <many-to-one name="departamento" class="POJO.Departamento" fetch="select">
             <column name="empDpto" />
         </many-to-one>
-        <many-to-one name="empleado" class="Modelo.Empleado" fetch="select">
+        <many-to-one name="empleado" class="POJO.Empleado" fetch="select">
             <column name="empResponsable" />
         </many-to-one>
         <property name="empNombre" type="string">
@@ -33,19 +33,19 @@
             <key>
                 <column name="dptoCoordinador" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Departamento" />
+            <one-to-many class="POJO.Departamento" />
         </set>
         <set name="empleados" table="empleado" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="empResponsable" />
             </key>
-            <one-to-many class="Modelo.Empleado" />
+            <one-to-many class="POJO.Empleado" />
         </set>
         <set name="nominas" table="nomina" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="nomEmpleado" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Nomina" />
+            <one-to-many class="POJO.Nomina" />
         </set>
     </class>
 </hibernate-mapping>

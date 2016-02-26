@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 25-feb-2016 13:46:05 by Hibernate Tools 4.3.1 -->
+<!-- Generated feb 25, 2016 7:23:25 p.m. by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Modelo.Categoriaprofesional" table="categoriaprofesional" catalog="empresa" optimistic-lock="version">
+    <class name="POJO.Categoriaprofesional" table="categoriaprofesional" catalog="empresa" optimistic-lock="version">
         <id name="codCategoriaP" type="java.lang.Integer">
             <column name="codCategoriaP" />
             <generator class="identity" />
         </id>
-        <many-to-one name="contrato" class="Modelo.Contrato" fetch="select">
+        <many-to-one name="contrato" class="POJO.Contrato" fetch="select">
             <column name="catContrato" not-null="true" />
         </many-to-one>
         <property name="catNombre" type="string">
@@ -18,7 +18,7 @@
             <key>
                 <column name="nomCategoriaP" not-null="true" />
             </key>
-            <one-to-many class="Modelo.Nomina" />
+            <one-to-many class="POJO.Nomina" />
         </set>
     </class>
 </hibernate-mapping>

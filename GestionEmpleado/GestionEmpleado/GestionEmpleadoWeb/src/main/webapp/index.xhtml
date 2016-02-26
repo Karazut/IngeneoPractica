@@ -3,34 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
         <ui:composition template="./WEB-INF/plantilla/plantilla.xhtml">
             <ui:define name="section">
-                <h:form>
-                    <h:dataTable value="#{empControl.empNombre}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Title"/>
-                        </f:facet>
-                        <h:outputText value="#{item.empNombre}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Description"/>
-                        </f:facet>
-                        <h:outputText value="#{item.empApellido}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value=" "/>
-                        </f:facet>
-                        <h:commandLink value="View"/>
-                    </h:column>
-                </h:dataTable>
+                <h:form id="frmIngresarEmpleado">
+                    <p:growl id="mensajeGeneral" showDetail="true" />
+                    <h1>Registrar Empleado</h1>
+                    <hr/>
+                    <p:panelGrid columns="1">
+                        <h:panelGroup>
+                            Agregar por cédula
+                            <p:inputText id="txtAgregarPorCedula" value="#{mbBEmpleado.valorCedula}">
+                                <p:ajax event="keyup" listener="#{mbBEmpleado.agregarListaEmpleadoPorCedula()}"/>
+                            </p:inputText>
+                            <br/><br/>
+                            <p:dataTable value="#{mbBEmpleado.allEmpleado}" var="item" style="font-size: 10px; width: 700px" scrollable="true" scrollHeight="100">
+                                <p:column headerText="Cédula">
+                                    <h:outputText value="#{item.empCedula}"/>
+                                </p:column>
+                                <p:column headerText="Nombre" filterBy="empNombre">
+                                    <h:outputText value="#{item.empNombre}"/>
+                                </p:column>
+                                <p:column headerText="Apellido" filterBy="empApellido">
+                                    <h:outputText value="#{item.empApellido}"/>
+                                </p:column>
+                                <p:column headerText="Telefono">
+                                    <h:outputText value="#{item.empTelefono}"/>
+                                </p:column>
+                                <p:column headerText="Direccion">
+                                    <h:outputText value="#{item.empDireccion}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </h:panelGroup>
+                    </p:panelGrid>
                 </h:form>
             </ui:define>
         </ui:composition>
