@@ -39,8 +39,9 @@ public class MbBEmpleado {
     public MbBEmpleado() {
 
     }
-
+//hola
     public void agregarListaEmpleadoPorCedula() {
+        
         this.session = null;
         this.transaction = null;
         try {
