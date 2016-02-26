@@ -35,9 +35,9 @@ public class DAOEmpleado implements ITEmpleado {
 
     @Override
     public Empleado getByCedEmpleado(Session session, String ced) throws Exception {
-        String hql = "from Empleado where empCedula=:Cedula";
+        String hql = "from Empleado where empCedula=:cedula";
         Query query = session.createQuery(hql);
-        query.setParameter("Cedula", ced);
+        query.setParameter("cedula", ced);
         return (Empleado) query.uniqueResult();
     }
 

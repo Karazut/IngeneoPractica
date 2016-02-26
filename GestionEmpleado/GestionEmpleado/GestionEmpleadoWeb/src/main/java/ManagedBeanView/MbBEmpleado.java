@@ -15,6 +15,7 @@ import javax.inject.Named;
 import javax.faces.view.ViewScoped;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -36,8 +37,6 @@ public class MbBEmpleado {
      * Creates a new instance of MbBEmpleado
      */
     public MbBEmpleado() {
-        FacesMessage fs = new FacesMessage(FacesMessage.FACES_MESSAGES, "hola lista", e.getMessage());
-        FacesContext.getCurrentInstance().addMessage(null, fs);
 
     }
 
@@ -59,7 +58,11 @@ public class MbBEmpleado {
                 String dir = emp.getEmpDireccion();
                 this.listaEmpleado.add(new Empleado(nom, ape, ced, dir));
             }
+            
+            this.valorCedula="";
             this.transaction.commit();
+            RequestContext.getCurrentInstance().update("frmListarEmpleado:mensajeGeneral");
+            RequestContext.getCurrentInstance().update("frmListarEmpleado:txtagregarListaEmpleadoPorCedula");
         } catch (Exception e) {
             if (this.transaction == null) {
                 transaction.rollback();
@@ -75,11 +78,10 @@ public class MbBEmpleado {
     }
 
     public List<Empleado> getAllEmpleado() {
-        
+
         this.session = null;
         this.transaction = null;
         try {
-            
             this.session = HibernateUtil.getSessionFactory().openSession();
             DAOEmpleado daoEmpleado = new DAOEmpleado();
             this.transaction = this.session.beginTransaction();

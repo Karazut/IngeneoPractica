@@ -7,6 +7,8 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/empresa?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">12345</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="POJO/Departamento.hbm.xml"/>
     <mapping resource="POJO/Contrato.hbm.xml"/>
     <mapping resource="POJO/Empleado.hbm.xml"/>

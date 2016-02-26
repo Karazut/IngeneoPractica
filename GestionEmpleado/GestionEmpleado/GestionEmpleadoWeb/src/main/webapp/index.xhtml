@@ -17,19 +17,19 @@
                     <hr/>
                     <p:panelGrid columns="1">
                         <h:panelGroup>
-                            Agregar por cédula
-                            <p:inputText id="txtAgregarPorCedula" value="#{mbBEmpleado.valorCedula}">
+                            Listar por cédula
+                            <p:inputText id="txtagregarListaEmpleadoPorCedula" value="#{mbBEmpleado.valorCedula}">
                                 <p:ajax event="keyup" listener="#{mbBEmpleado.agregarListaEmpleadoPorCedula()}"/>
                             </p:inputText>
                             <br/><br/>
-                            <p:dataTable value="#{mbBEmpleado.allEmpleado}" var="item" style="font-size: 10px; width: 700px" scrollable="true" scrollHeight="100">
+                            <p:dataTable value="#{mbBEmpleado.allEmpleado}" var="item" style="font-size: 10px; width: auto" scrollable="true" scrollHeight="100">
                                 <p:column headerText="Cédula">
                                     <h:outputText value="#{item.empCedula}"/>
                                 </p:column>
                                 <p:column headerText="Nombre">
                                     <h:outputText value="#{item.empNombre}"/>
                                 </p:column>
-                                <p:column headerText="Apellido" filterBy="empApellido">
+                                <p:column headerText="Apellido">
                                     <h:outputText value="#{item.empApellido}"/>
                                 </p:column>
                                 <p:column headerText="Direccion">
