@@ -36,6 +36,9 @@ public class MbBEmpleado {
      * Creates a new instance of MbBEmpleado
      */
     public MbBEmpleado() {
+        FacesMessage fs = new FacesMessage(FacesMessage.FACES_MESSAGES, "hola lista", e.getMessage());
+        FacesContext.getCurrentInstance().addMessage(null, fs);
+
     }
 
     public void agregarListaEmpleadoPorCedula() {
@@ -54,6 +57,7 @@ public class MbBEmpleado {
                 String ape = emp.getEmpApellido();
                 String ced = emp.getEmpCedula();
                 String dir = emp.getEmpDireccion();
+                this.listaEmpleado.add(new Empleado(nom, ape, ced, dir));
             }
             this.transaction.commit();
         } catch (Exception e) {
@@ -71,9 +75,11 @@ public class MbBEmpleado {
     }
 
     public List<Empleado> getAllEmpleado() {
+        
         this.session = null;
         this.transaction = null;
         try {
+            
             this.session = HibernateUtil.getSessionFactory().openSession();
             DAOEmpleado daoEmpleado = new DAOEmpleado();
             this.transaction = this.session.beginTransaction();
@@ -117,6 +123,22 @@ public class MbBEmpleado {
 
     public void setListaEmpleado(List<Empleado> listaEmpleado) {
         this.listaEmpleado = listaEmpleado;
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 
 }
